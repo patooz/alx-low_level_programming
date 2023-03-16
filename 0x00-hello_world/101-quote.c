@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- * main - entry point
+ * main - Entry point
  *
- * return - (0) success
+ * Return: 0 (success)
  */
 int main(void)
 {
-	fprintf(stderr, "%s", "and that piece of art is usefull\"");
-	fprintf(stderr, "%s", "- Dora Korpar, 2015-10-19\n");
+	fprintf(stderr, "%s", "and that piece of art is useful\"");
+	fprintf(stderr, "%s", " - Dora Korpar, 2015-10-19\n");
 	return (1);
 }	
