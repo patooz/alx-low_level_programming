@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	fprint(stderr, "%s", "and that piece of art is usefull\"");
-	fprint(stderr, "%s", "- Dora Korpar, 2015-10-19\n");
+	fprintf(stderr, "%s", "and that piece of art is usefull\"");
+	fprintf(stderr, "%s", "- Dora Korpar, 2015-10-19\n");
 	return (1);
 }	
