@@ -2,13 +2,13 @@
 /**
  * main - Entry point
  * Description: combinations of single-digit numbers
- * Retutn: 0 (success)
+ * Return: 0 (success)
  */
 int main(void)
 {
 	int i;
 
-	for (i = 48; i <= 48; i++)
+	for (i = 48; i <= 57; i++)
 	{
 		putchar((char)i);
 		if (i != 57)
