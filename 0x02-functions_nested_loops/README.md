@@ -4,3 +4,4 @@
 3-islower.c - a C function that checks for lowercase character.
 4-main.c  - a C function that checks for alphabetic character.
 5-sign.c - a C function that prints the sign of a number
+6-main.c - a C function that computes the absolute value of an integer.
