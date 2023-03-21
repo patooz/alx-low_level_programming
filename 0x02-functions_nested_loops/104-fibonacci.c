@@ -12,6 +12,7 @@ int main(void)
 	for (d = 2; d < 98; d++)
 	{
 		c = a + b;
+		printf("%d", c);
 		if (d != 97)
 		{
 			printf(", ");
