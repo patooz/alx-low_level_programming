@@ -2,7 +2,7 @@
 
 /**
  * print_line - draws a straight line in the terminal
- *@n: number of times to print white spaces
+ *@n: times to print whitespaces
  * Return: straight line in the terminal
  */
 void print_line(int n)
