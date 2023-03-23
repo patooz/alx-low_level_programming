@@ -19,6 +19,6 @@ int main(void)
 			maxn = num / a;
 		}
 	}
-	printf("%ld", maxn);
+	printf("%ld\n", maxn);
 	return (0);
 }
