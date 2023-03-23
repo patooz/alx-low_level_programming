@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.io>
+#include <math.h>
 
 /**
  * main - prints the largest prime factor of the number 612852475143
@@ -19,6 +19,6 @@ int main(void)
 			maxn = num / a;
 		}
 	}
-	printf("%d", maxn);
+	printf("%ld", maxn);
 	return (0);
 }
