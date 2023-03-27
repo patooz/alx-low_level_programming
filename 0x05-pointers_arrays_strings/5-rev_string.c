@@ -18,6 +18,11 @@ void rev_string(char *s)
 		s[j - 1 - i] = a;
 	}
 }
+/**
+ *  _strlen - length of the string
+ *  @s: string to be processed
+ *  Return: length of the string
+ */
 int _strlen(char *s)
 {
 	int i;
