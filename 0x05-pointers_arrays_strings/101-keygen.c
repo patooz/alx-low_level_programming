@@ -16,7 +16,7 @@ void randomPass(int N)
 	char letters[] = "abcdefghijklmnoqprstuvwyzx";
 	char LETTERS[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
 	char symbols[] = "!@#$^&*?";
-	char password[N];
+	char pass[N];
 
 	srand((unsigned int) (time(NULL)));
 	random = rand() % 4;
@@ -24,27 +24,27 @@ void randomPass(int N)
 	{
 		if (random == 1)
 		{
-			password[i] = numbers[rand() % 10];
+			pass[i] = numbers[rand() % 10];
 			random = rand() % 4;
-			printf("%c", password[i]);
+			printf("%c", pass[i]);
 		}
 		else if (random == 2)
 		{
-			password[i] = symbols[rand() % 8];
+			pass[i] = symbols[rand() % 8];
 			random = rand() % 4;
-			printf("%c", password[i]);
+			printf("%c", pass[i]);
 		}
 		else if (random == 3)
 		{
-			password[i] = LETTERS[rand() % 26];
+			pass[i] = LETTERS[rand() % 26];
 			random = rand() % 4;
-			printf("%c", password[i]);
+			printf("%c", pass[i]);
 		}
 		else
 		{
-			password[i] = letters[rand() % 26];
+			pass[i] = letters[rand() % 26];
 			random = rand() % 4;
-			printf("%c", password[i]);
+			printf("%c", pass[i]);
 		}
 	}
 }
