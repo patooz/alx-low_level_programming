@@ -12,14 +12,13 @@
 void randomPass(int N)
 {
 	int i = 0, random = 0;
-
-	srand((unsigned int) (time(NULL)));
 	char numbers[] = "0123456789";
 	char letters[] = "abcdefghijklmnoqprstuvwyzx";
 	char LETTERS[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
 	char symbols[] = "!@#$^&*?";
 	char password[N];
 
+	srand((unsigned int) (time(NULL)));
 	random = rand() % 4;
 	for (i = 0; i < N; i++)
 	{
