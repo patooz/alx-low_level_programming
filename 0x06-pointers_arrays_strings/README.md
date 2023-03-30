@@ -9,3 +9,5 @@
 100-rot13.c - A C function that encodes a string using rot13.
 101-print_number.c - A C function that prints an integer.
 102-magic.c - added p[5] = 98 to print exactly 98\n
+103-infinite_add.c - A C function that adds two numbers.
+104-print_buffer.c - A C function that prints a buffer.
