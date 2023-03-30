@@ -4,6 +4,7 @@
  * @dest: first string
  * @src: second string
  * @n: byts from src
+ * Return: pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
