@@ -6,11 +6,12 @@
  * @a: pointer of the matrix
  * @size: size of the matrix
  */
-void print_diagsums(int *a, int size);
+void print_diagsums(int *a, int size)
 {
 	int b, c, i, j, k;
 
-	j = 0;k = size - 1;
+	j = 0;
+	k = size - 1;
 	b = c = 0;
 	for (i = 0; i < size; i++, j += size + 1, k += size - 1)
 	{
