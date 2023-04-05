@@ -6,7 +6,7 @@
  * Return: square root of a number,
  * if n has no natural number, returns -1
  */
-int _sqrt_recursion(int n);
+int _sqrt_recursion(int n)
 {
 	if (x * x > n)
 		return (-1);
