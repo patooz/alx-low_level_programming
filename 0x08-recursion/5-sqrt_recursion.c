@@ -8,6 +8,8 @@
  */
 int _sqrt_recursion(int n)
 {
+	int x;
+
 	if (x * x > n)
 		return (-1);
 	if (x * x == n)
