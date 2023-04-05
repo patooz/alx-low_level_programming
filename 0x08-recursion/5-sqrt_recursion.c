@@ -22,7 +22,7 @@ int _sqrt_recursion(int n, int a)
  * if n has no natural number, returns -1
  */
 
-int _sqrt_recursion(int n)
+int _sq_recursion(int n)
 {
 	return (_sqrt_recursion(n, 1));
 }
