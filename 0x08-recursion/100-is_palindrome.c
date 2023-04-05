@@ -23,7 +23,7 @@ int  _strlen(char *s)
 int _check_pal(char *s, int i, int j)
 {
 	if (i >= j)
-		return (i);
+		return (1);
 	if (s[i] != s[j])
 		return (0);
 	return (_check_pal(s, i + 1, j - 1));
