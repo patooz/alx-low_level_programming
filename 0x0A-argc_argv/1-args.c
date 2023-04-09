@@ -6,7 +6,7 @@
  * argv: argument string
  * Return: number of arguments passed
  */
-int  __attribute__ ((unused)) main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__ ((unused)))
 {
 	printf("%d\n", argc);
 	return (0);
