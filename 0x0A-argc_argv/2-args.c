@@ -7,7 +7,7 @@
  * Return: all arguments including the first one
  * one argument per line
  */
-int main(int argc, char *argv[] __attribute__ ((unused)))
+int main(int argc, char *argv[])
 {
 	int i;
 
