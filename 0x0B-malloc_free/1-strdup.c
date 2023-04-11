@@ -18,7 +18,7 @@ char *_strdup(char *str)
 	j = 0;
 	while (*(str + j++))
 		;
-	k = malloc(y * sizeof(char));
+	k = malloc(j * sizeof(char));
 	if (k == NULL)
 		return (NULL);
 	i = 0;
