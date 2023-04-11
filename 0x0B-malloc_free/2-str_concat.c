@@ -34,9 +34,9 @@ char *str_concat(char *s1, char *s2)
 	if (k == NULL)
 		return (NULL);
 	for (l2 = 0; l2 < i; ++l2)
-		s[l2] = s1[l2];
+		k[l2] = s1[l2];
 	for (l2 = 0; l2 < j; ++l2)
-		s[l2 + i] = s2[l2];
-	s[i + j] = '\0';
-	return (s);
+		k[l2 + i] = s2[l2];
+	k[i + j] = '\0';
+	return (k);
 }
