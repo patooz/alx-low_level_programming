@@ -21,8 +21,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			printf(" ");
 		if (!(i % 10) && i)
 			printf("\n");
-		printf("0x%2x", buffer[i]);
-		i++
+		printf("0x%02x", buffer[i]);
+		i++;
 	}
 	printf("\n");
 }
@@ -40,7 +40,7 @@ int main(void)
 	i = 0;
 	while (i < 98)
 		s[i++] = 98;
-	sumple_print_buffer(s, 98);
+	simple_print_buffer(s, 98);
 	free(s);
 	return (0);
 }
