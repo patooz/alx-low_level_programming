@@ -1,125 +1,149 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include "main.h"
 
 /**
- * error_exit - checks if number of arguments is incorrect
- * Return: nothing
+ * _print - moves a string one place to the left and prints the string
+ * @str: string to move
+ * @l: size of string
+ *
+ * Return: void
  */
-void error_exit(void)
-{
-	printf("Error\n");
-	exit(98);
-}
-/**
- * is_positive_int - checks if the arguments are positive digits
- * @str: pointer to the string
- * Return: 1
- */
-int is_positive_int(char *str)
-{
-	int len = strlen(str);
-	int i;
 
-	for (i = 0; i < len; i++)
+void _print(char *str, int l)
+{
+	int i, j;
+
+	i = j = 0;
+	while (i < l)
 	{
-		if (!isdigit(str[i]))
+		if (str[i] != '0')
+			j = 1;
+		if (j || i == l - 1)
+			_putchar(str[i]);
+		i++;
+	}
+
+	_putchar('\n');
+	free(str);
+}
+
+/**
+ * mul - multiplies a char with a string and places the answer into dest
+ * @n: char to multiply
+ * @num: string to multiply
+ * @num_index: last non NULL index of num
+ * @dest: destination of multiplication
+ * @dest_index: highest index to start addition
+ *
+ * Return: pointer to dest, or NULL on failure
+ */
+char *mul(char n, char *num, int num_index, char *dest, int dest_index)
+{
+	int j, k, mul, mulrem, add, addrem;
+
+	mulrem = addrem = 0;
+	for (j = num_index, k = dest_index; j >= 0; j--, k--)
+	{
+		mul = (n - '0') * (num[j] - '0') + mulrem;
+		mulrem = mul / 10;
+		add = (dest[k] - '0') + (mul % 10) + addrem;
+		addrem = add / 10;
+		dest[k] = add % 10 + '0';
+	}
+	for (addrem += mulrem; k >= 0 && addrem; k--)
+	{
+		add = (dest[k] - '0') + addrem;
+		addrem = add / 10;
+		dest[k] = add % 10 + '0';
+	}
+	if (addrem)
+	{
+		return (NULL);
+	}
+	return (dest);
+}
+
+/**
+ * check_for_digits - checks the arguments to ensure they are digits
+ * @av: pointer to arguments
+ *
+ * Return: 0 if digits, 1 if not
+ */
+int check_for_digits(char **av)
+{
+	int i, j;
+
+	for (i = 1; i < 3; i++)
+	{
+		for (j = 0; av[i][j]; j++)
 		{
-			return (0);
+			if (av[i][j] < '0' || av[i][j] > '9')
+				return (1);
 		}
 	}
-	return (1);
+	return (0);
 }
+
 /**
- * string_to_int_array - converts strings to arrays of integers
- * @str: pointer to the string
- * @size: size of the string
- * Return: array
+ * init - initializes a string
+ * @str: sting to initialize
+ * @l: length of strinf
+ *
+ * Return: void
  */
-int *string_to_int_array(char *str, int *size)
+void init(char *str, int l)
 {
-	int len = strlen(str);
-	int *arr = (int *) malloc(len * sizeof(int));
 	int i;
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i < l; i++)
+		str[i] = '0';
+	str[i] = '\0';
+}
+
+/**
+ * main - multiply two numbers
+ * @argc: number of arguments
+ * @argv: argument vector
+ *
+ * Return: zero, or exit status of 98 if failure
+ */
+
+int main(int argc, char *argv[])
+{
+	int l1, l2, ln, ti, i;
+	char *a;
+	char *t;
+	char e[] = "Error\n";
+
+	if (argc != 3 || check_for_digits(argv))
 	{
-		arr[i] = str[i] - '0';
+		for (ti = 0; e[ti]; ti++)
+			_putchar(e[ti]);
+		exit(98);
 	}
-	*size = len;
-	return (arr);
-}
-/**
- * print_int_array - prints the array
- *@arr: pointer to the array
- *@size: size of the array
- */
-void print_int_array(int *arr, int size)
-{
-	int i;
-
-	for (i = 0; i < size; i++)
+	for (l1 = 0; argv[1][l1]; l1++)
+		;
+	for (l2 = 0; argv[2][l2]; l2++)
+		;
+	ln = l1 + l2 + 1;
+	a = malloc(ln * sizeof(char));
+	if (a == NULL)
 	{
-		printf("%d", arr[i]);
+		for (ti = 0; e[ti]; ti++)
+			_putchar(e[ti]);
+		exit(98);
 	}
-	printf("\n");
-}
-/**
- * multiply - multiplies two digits
- * @a: pointer to size of integer a
- * @b: pointer to the size og integer b
- * @a_size: size of integer a
- * @b_size: size of integer b
- * @result_size: pointer to the size of results
- *Return: product of the two digits
- */
-int *multiply(int *a, int a_size, int *b, int b_size, int *result_size)
-{
-	int max_size = a_size + b_size;
-	int *result = (int *) malloc(max_size * sizeof(int));
-
-	memset(result, 0, max_size * sizeof(int));
-	int i;
-
-	for (i = 0; i < b_size; i++)
+	init(a, ln - 1);
+	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
 	{
-		int carry = 0;
-		int j;
-
-		for (int j = 0; j < a_size; j++)
+		t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
+		if (t == NULL)
 		{
-			int temp = result[i + j] + b[i] * a[j] + carry;
-
-			result[i + j] = temp % 10;
-			carry = temp / 10;
+			for (ti = 0; e[ti]; ti++)
+				_putchar(e[ti]);
+			free(a);
+			exit(98);
 		}
-		if (carry)
-			result[i + a_size] += carry;
 	}
-	while (max_size > 0 && result[max_size - 1] == 0)
-		max_size--;
-	*result_size = max_size;
-	return (result);
-}
-/**
- * main - prints thr results
- * @argc: argument count
- * @argv: argument string
- * Return: 0
- */
-int main(int argc, char **argv)
-{
-	if (argc != 3 || !is_positive_int(argv[1]) || !is_positive_int(argv[2]))
-		error_exit();
-	int num1_size, num2_size, result_size;
-	int *num1 = string_to_int_array(argv[1], &num1_size);
-	int *num2 = string_to_int_array(argv[2], &num2_size);
-	int *result = multiply(num1, num1_size, num2, num2_size, &result_size);
-
-	print_int_array(result, result_size);
-	free(num1);
-	free(num2);
-	free(result);
+	_print(a, ln - 1);
 	return (0);
 }
