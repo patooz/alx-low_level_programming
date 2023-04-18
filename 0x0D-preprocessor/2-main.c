@@ -1,6 +1,11 @@
-#ifndef FUNCT_H
-#define FUNCT_H
+#include <stdio.h>
 
-#define ABS(x) ((x) < (0) ? ((x) * (-1)) : (x))
-
-#endif /** FUNCT_H */
+/**
+ * main - prints the name of the file it was compiled from
+ * Return: 0
+ */
+int main(void)
+{
+	printf("%s\n", __FILE__);
+	return (0);
+}
