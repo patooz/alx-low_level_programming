@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <udis86.h>
 #include <stdlib.h>
+#include <udis86.h>
 
 /**
  * main - entry point
