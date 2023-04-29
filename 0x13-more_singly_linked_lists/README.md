@@ -9,3 +9,4 @@
 8-sum_listint.c - A C function that returns the sum of all the data (n) of a listint_t linked list.
 10-delete_nodeint.c - A C function that deletes the node at index index of a listint_t linked list.
 100-reverse_listin - A C function that reverses a listint_t linked list.
+101-print_listint_safe.c - A C function that prints a listint_t linked list.
