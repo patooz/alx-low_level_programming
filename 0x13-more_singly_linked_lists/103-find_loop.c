@@ -11,12 +11,22 @@ listint_t *find_listint_loop(listint_t *head)
 	listint_t *high = head;
 	listint_t *low = head;
 
+	if (!head)
+		return (NULL);
 	while (low && high && high->next)
 	{
 		low = low->next;
 		high = high->next->next;
 		if (low == high)
-			return (low);
+		{
+			low = head;
+			while (low != high)
+			{
+				low = low->next;
+				high = high->next;
+			}
+			return (high);
+		}
 	}
 	return (NULL);
 }
