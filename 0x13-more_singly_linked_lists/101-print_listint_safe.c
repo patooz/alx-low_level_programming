@@ -37,7 +37,7 @@ size_t uni_node(const listint_t *head)
 			return (nodes);
 		}
 		x = x->next;
-		y = (y->next)->next
+		y = (y->next)->next;
 	}
 	return (0);
 }
