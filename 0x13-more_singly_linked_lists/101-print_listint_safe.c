@@ -11,15 +11,17 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *k;
 	size_t i = 0;
 
-
+	k = head;
 	while (head != NULL)
 	{
-		k = head;
-		head = head->next;
 		i++;
-		printf("[%p] %d\n", (void *)k, k->n);
-		if (k <= head)
+		printf("[%p] %d\n", (*void *)k, k->n);
+		k = k->next;
+		if (k >= head && k != NULL)
+		{
+			printf("-> [%p] %d\n", (void *)k, k->n);
 			break;
-	
+		}
+	}
 	return (i);
 }
