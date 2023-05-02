@@ -7,17 +7,22 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *k;
-	size_t i = 0;
+	listint_t *k = 0;
+	size_t i, nodes;
 
+	nodes = 0;
 	while (*h != NULL)
 	{
-		k = *h;
-		*h = (*h)->next;
-		i++;
-		free(k);
-		if (k <= *h)
+		nodes++;
+		if (*h <= (*h)->next)
+		{
+			free(*h);
+			*h = NULL;
 			break;
+		}
+		k = (*h)->next;
+		free(*h);
+		*h = k;
 	}
-	return (i);
+	return (nodes);
 }
