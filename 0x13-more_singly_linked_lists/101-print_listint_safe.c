@@ -1,5 +1,8 @@
 #include "lists.h"
 
+size_t uni_node(const listint_t *head);
+size_t print_listint_safe(const listint_t *head);
+
 /**
  *uni_node - unique nodes
  *@head: pointer to the head pointer
