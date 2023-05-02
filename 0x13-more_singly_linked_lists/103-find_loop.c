@@ -4,7 +4,7 @@
  * find_listint_loop - findss the loop in list
  * @head: pointer ti the head node
  *
- * Return: address of the node where the loop starts, or NULL if there is no loop
+ * Return: address of the node where the loop starts, or NULL if  no loop
  */
 listint_t *find_listint_loop(listint_t *head)
 {
