@@ -16,7 +16,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		y <<= 1;
 		y += b[x] - '0';
-		i++;
+		x++;
 	}
 	return (y);
 
