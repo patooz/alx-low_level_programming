@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		}
 		l = write(file_to, m, k);
 		if (l < k)
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2], exit(99));
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	if (close(file_from) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd  %d\n", file_from), exit(100);
