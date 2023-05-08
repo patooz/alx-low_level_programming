@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to
+	int file_from, file_to;
 	int k = 1024, l = 0;
 	char m[1024];
 
