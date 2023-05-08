@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2], exit(99));
 	}
 	if (close(file_from) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd  %d\n", file_from, exit(100));
+		dprintf(STDERR_FILENO, "Error: Can't close fd  %d\n", file_from), exit(100);
 	if (close(file_to) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd  %d\n", file_to, exit(100));
+		dprintf(STDERR_FILENO, "Error: Can't close fd  %d\n", file_to), exit(100);
 	return (0);
 }
