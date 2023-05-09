@@ -176,7 +176,7 @@ void _type(unsigned int e_type, unsigned char *e_ident)
 			printf("NONE (NONE)\n");
 			break;
 		case ET_REL:
-			printf("REL (Relocate file)\n");
+			printf("REL (Relocatable file)\n");
 			break;
 		case ET_EXEC:
 			printf("EXEC (Executable file)\n");
