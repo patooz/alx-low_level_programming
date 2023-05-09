@@ -52,7 +52,7 @@ void _class(unsigned char *ptr)
 		case ELFCLASSNONE:
 			printf("none\n");
 			break;
-		case EFLCLASS32:
+		case ELFCLASS32:
 			printf("ELF32\n");
 			break;
 		case ELFCLASS64:
@@ -207,7 +207,7 @@ void _entry(unsigned long int entry, unsigned char *ptr)
 		entry = (entry << 16) | (entry >> 16);
 	}
 	if (ptr[EI_CLASS] == ELFCLASS32)
-		preintf("%#x\n", (unsigned int)entry);
+		printf("%#x\n", (unsigned int)entry);
 	else
 		printf("%#lx\n", entry);
 }
