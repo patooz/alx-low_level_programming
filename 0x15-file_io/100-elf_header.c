@@ -267,7 +267,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	_osabi(h->ptr);
 	_abi(h->ptr);
 	_type(h->type, h->ptr);
-	_entryh->(h->entry, h->ptr);
+	_entry->(h->entry, h->ptr);
 	free(h);
 	close_elf(i);
 	return (0);
