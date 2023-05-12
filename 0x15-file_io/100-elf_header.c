@@ -85,7 +85,7 @@ void _data(unsigned char *e_ident)
 			printf("2's complement, big endian\n");
 			break;
 		default:
-			printf("unknown: %x>\n", e_ident[EI_CLASS]);
+			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -145,7 +145,7 @@ void _osabi(unsigned char *e_ident)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("unknown: %x>\n", e_ident[EI_OSABI]);
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
 
@@ -220,8 +220,7 @@ void _close(int file)
 {
 	if (close(file) == -1)
 	{
-		dprintf(STDERR_FILENO,
-				"Error: Can't close fd %d\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
 		exit(98);
 	}
 }
