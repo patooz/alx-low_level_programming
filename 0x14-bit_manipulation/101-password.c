@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char passoword[] = "Congratulations!";
+	char password[] = "Congratulations!";
 	FILE *fp;
 
 	fp = fopen("101-password", "w");
