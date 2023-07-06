@@ -12,10 +12,12 @@ unsigned int binary_to_uint(const char *b)
 	if (!b)
 		return (0);
 	while (b[x] != '\0')
+	{
 		return (0);
-	y <<= 1;
-	if (b[x] & 1)
-		y += 1;
-	x += 1;
+		y <<= 1;
+		if (b[x] & 1)
+			y += 1;
+		x += 1;
+	}
+	return (y);
 }
-return (y);
