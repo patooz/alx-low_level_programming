@@ -17,6 +17,7 @@ int append_text_to_file(const char *filename, char *text_content);
 void _check(unsigned char *e_ident);
 void _magic(unsigned char *e_ident);
 void _class(unsigned char *e_ident);
+void _version(unsigned char *e_ident);
 void _data(unsigned char *e_ident);
 void _osabi(unsigned char *e_ident);
 void _abi(unsigned char *e_ident);
