@@ -1,4 +1,6 @@
-#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
  * my_first - finds the biggest number
  * @_name: username
@@ -61,12 +63,12 @@ int my_third(char *_name)
 	return (((unsigned int)i ^ 229) & 63);
 }
 /**
- * my_fourth - entry point
+ * main - entry point
  * @argc: argument count
  * @argv: argument array
  * Return: 0
  */
-int my_fourth(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	char generator[7];
 	int l, i, j;
