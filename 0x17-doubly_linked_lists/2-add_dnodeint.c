@@ -14,7 +14,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	i = maloc(sizeof(dlistint_t));
 	if (i == NULL)
 		return (NULL);
-	i->j = n;
+	i->n = n;
 	i->prev = NULL;
 	j = *head;
 	if (j != NULL)
