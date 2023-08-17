@@ -19,7 +19,7 @@ int my_first(char *_name, int l)
 			i = _name[j];
 		j += 1;
 	}
-	srand(j ^ 14);
+	srand(i ^ 14);
 	k = rand();
 	return (k & 63);
 }
@@ -35,7 +35,7 @@ int my_second(char *_name, int l)
 	int j;
 
 	i = j = 0;
-	while (i < l)
+	while (j < l)
 	{
 		i = i + _name[j] * _name[j];
 		j += 1;
