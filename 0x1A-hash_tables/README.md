@@ -4,3 +4,4 @@
 4-hash_table_get.c - a function that retrieves a value associated with a key.
 5-hash_table_print.c - a function that prints a hash table.
 6-hash_table_delete.c - a function that deletes a hash table.
+100-sorted_hash_table.c - implememts PHP's hash tables funtionality
