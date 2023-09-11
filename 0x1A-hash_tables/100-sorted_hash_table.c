@@ -1,10 +1,5 @@
 #include "hash_tables.h"
 
-shash_table_t *shash_table_create(unsigned long int size);
-int shash_table_set(shash_table_t *ht, const char *key, const char *value);
-char *shash_table_get(const shash_table_t *ht, const char *key);
-void shash_table_print(const shash_table_t *ht);
-
 /**
  * shash_table_create - makes a sorted hash table
  * @size: size of the hash table
@@ -121,6 +116,9 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	k = key_index((const unsigned char *)key, ht->size);
 	if (k >= ht->size)
 		return (NULL);
+	i = ht->shead;
+	while (i != NULL && strcmp(i->key, key) != 0)
+		i = i->snext;
 	return ((i == NULL) ? NULL : i->value);
 }
 
